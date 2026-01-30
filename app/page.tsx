@@ -1,5 +1,16 @@
-export default function Home() {
+import Header from "@/components/Header";
+import Banner from "@/components/Banner";
+
+export default function Portfolio() {
   return (
-    <div className="text-3xl font-bold text-blue-500">Hello Tailwind!</div>
+    <>
+      <Header />
+      <main className="pt-20">
+        {" "}
+        {/* padding top to avoid overlapping header */}
+        <Banner />
+        {/* You can add About, Projects, Contact sections here */}
+      </main>
+    </>
   );
 }

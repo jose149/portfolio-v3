@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optional: add custom colors if you want Tailwind classes */
+:root {
+  --color-header: #EEEEEF;
+  --color-banner: #212943;
+}
