@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "portfolio-v3",
+			"path": "."
+		},
+		{
+			"name": ".agents",
+			"path": "../../Downloads/nextjs-agent-skill/.agents"
+		}
+	],
+	"settings": {}
+}
