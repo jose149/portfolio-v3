@@ -10,6 +10,19 @@ Keep product requirements in `specs/`, architecture decisions in `docs/decisions
 Build a high-quality portfolio platform with a Next.js and React frontend, TypeScript, Sass, Sanity, Storybook, ESLint, Prettier, pnpm workspaces, and Turborepo.
 Exact versions, dependencies, and executable commands are defined by the repository files and lockfile.
 
+## Agent skills
+
+Skills live in `specs/skills/<skill-name>/SKILL.md`.
+
+The Planner must list the required skills for each task. The Executor must load only
+those listed skills unless implementation reveals that another skill is necessary.
+
+Do not load all skills pre-emptively.
+
+Use `specs/skills/INDEX.md` to discover available skills. Technology-specific conventions,
+version-sensitive guidance, commands, examples, and common mistakes belong in skills,
+not in `AGENTS.md`.
+
 ## Sources of truth
 
 Use the first applicable source in this order:

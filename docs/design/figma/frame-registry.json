@@ -1,0 +1,61 @@
+{
+  "figmaPage": "Portfolio / Final",
+  "frames": [
+    {
+      "name": "Portfolio/Desktop/Light/Full",
+      "file": "figma-import/frames/desktop/light/00-full-page.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Dark/Full",
+      "file": "figma-import/frames/desktop/dark/00-full-page.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Light/HeaderHero",
+      "file": "figma-import/frames/desktop/light/01-header-hero.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Dark/HeaderHero",
+      "file": "figma-import/frames/desktop/dark/01-header-hero.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Light/Projects",
+      "file": "figma-import/frames/desktop/light/02-projects.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Dark/Projects",
+      "file": "figma-import/frames/desktop/dark/02-projects.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Light/About",
+      "file": "figma-import/frames/desktop/light/03-about.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Dark/About",
+      "file": "figma-import/frames/desktop/dark/03-about.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Light/Experience",
+      "file": "figma-import/frames/desktop/light/04-experience.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Dark/Experience",
+      "file": "figma-import/frames/desktop/dark/04-experience.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Light/ContactFooter",
+      "file": "figma-import/frames/desktop/light/05-contact-footer.svg"
+    },
+    {
+      "name": "Portfolio/Desktop/Dark/ContactFooter",
+      "file": "figma-import/frames/desktop/dark/05-contact-footer.svg"
+    },
+    {
+      "name": "Portfolio/Mobile/Light/Full",
+      "file": "figma-import/frames/mobile/light/00-full-page-mobile.svg"
+    },
+    {
+      "name": "Portfolio/Mobile/Dark/Full",
+      "file": "figma-import/frames/mobile/dark/00-full-page-mobile.svg"
+    }
+  ]
+}

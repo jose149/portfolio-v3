@@ -98,3 +98,22 @@ The accepted core stack is:
 * Statsig;
 * Google Analytics;
 * Hotjar;
+
+
+
+* nextjs
+* react
+* typeScript
+* sass
+* sanity
+* storybook
+* eslint
+* prettier
+* pnpm
+* pnpm-workspaces
+* turborepo
+* vitest
+* playwright
+* accessibility-testing
+* stylelint
+* statsig
