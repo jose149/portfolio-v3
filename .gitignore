@@ -58,3 +58,4 @@ test-results/
 
 # Misc
 *.pem
+*storybook.log

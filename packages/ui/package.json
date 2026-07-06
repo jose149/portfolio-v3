@@ -1,0 +1,27 @@
+{
+  "name": "@portfolio/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": ["**/*.css", "**/*.scss"],
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles": "./src/styles/index.scss"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:storybook": "vitest run --project=storybook",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "stylelint": "stylelint \"src/**/*.{css,scss}\" --allow-empty-input",
+    "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --allow-empty-input --fix"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
