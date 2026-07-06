@@ -32,4 +32,3 @@ Build the web application:
 ```bash
 pnpm build
 ```
-

@@ -1,11 +1,12 @@
 ---
-
 name: sanity
 description: Build, review, debug, or refactor Sanity Studio schemas, GROQ queries, TypeGen output, content clients, preview, live content, and visual editing integrations.
 compatibility: Requires a Sanity project. Follow the installed Sanity, @sanity/client, and framework integration versions.
 metadata:
   version: "1.0"
---------------
+---
+
+---
 
 # Sanity workflow
 
@@ -19,22 +20,22 @@ metadata:
 
 ## Implementation rules
 
-* Model content by meaning and editorial purpose, not by its current visual layout.
-* Prefer explicit domain schemas over a generic page builder unless the specification requires composable sections.
-* Define schemas with `defineType`, `defineField`, and `defineArrayMember`.
-* Give fields clear names, titles, descriptions, validation, and useful previews.
-* Use references for independently managed content and embedded objects for content owned by their parent.
-* Add alternative text for meaningful images and enable hotspot or crop only when the design uses them.
-* Keep Sanity access in a small integration layer. Presentation components must not query Sanity directly.
-* Define GROQ queries with `defineQuery`, use parameters instead of string interpolation, and project only the fields the application needs.
-* Use Sanity TypeGen for schema and query-result types. Never edit generated types manually.
-* Treat Studio schema validation as editor guidance, not runtime security; validate untrusted content again at application boundaries when required.
-* Set `projectId`, `dataset`, and `apiVersion` explicitly. Choose caching or CDN behaviour deliberately for each client.
-* Public rendering must use published content. Drafts and preview data require authenticated draft or preview mode.
-* Keep write tokens and preview credentials server-only. Use the least-privileged token possible.
-* Follow the official framework guide for live content and visual editing; do not recreate its cache, draft-mode, or source-map behaviour manually.
-* Keep content migrations explicit, reviewable, repeatable, and separate from normal rendering code.
-* Use transactions for related mutations when partial updates would leave invalid content.
+- Model content by meaning and editorial purpose, not by its current visual layout.
+- Prefer explicit domain schemas over a generic page builder unless the specification requires composable sections.
+- Define schemas with `defineType`, `defineField`, and `defineArrayMember`.
+- Give fields clear names, titles, descriptions, validation, and useful previews.
+- Use references for independently managed content and embedded objects for content owned by their parent.
+- Add alternative text for meaningful images and enable hotspot or crop only when the design uses them.
+- Keep Sanity access in a small integration layer. Presentation components must not query Sanity directly.
+- Define GROQ queries with `defineQuery`, use parameters instead of string interpolation, and project only the fields the application needs.
+- Use Sanity TypeGen for schema and query-result types. Never edit generated types manually.
+- Treat Studio schema validation as editor guidance, not runtime security; validate untrusted content again at application boundaries when required.
+- Set `projectId`, `dataset`, and `apiVersion` explicitly. Choose caching or CDN behaviour deliberately for each client.
+- Public rendering must use published content. Drafts and preview data require authenticated draft or preview mode.
+- Keep write tokens and preview credentials server-only. Use the least-privileged token possible.
+- Follow the official framework guide for live content and visual editing; do not recreate its cache, draft-mode, or source-map behaviour manually.
+- Keep content migrations explicit, reviewable, repeatable, and separate from normal rendering code.
+- Use transactions for related mutations when partial updates would leave invalid content.
 
 ## Validation
 

@@ -15,9 +15,9 @@ pnpm install
 
 ### Expected result
 
-* pnpm discovers the declared workspace packages.
-* Workspace metadata is valid enough for dependency installation.
-* No application source outside the permitted scope is introduced.
+- pnpm discovers the declared workspace packages.
+- Workspace metadata is valid enough for dependency installation.
+- No application source outside the permitted scope is introduced.
 
 ## Checkpoint 2 - Shared TypeScript Configuration And Next.js Scaffold
 
@@ -35,12 +35,12 @@ pnpm typecheck
 
 ### Expected result
 
-* TypeScript checks complete successfully.
-* The web package uses the shared strict TypeScript configuration.
-* The web package keeps the `@/*` import alias.
-* The web development script uses Turbopack.
-* Sass is present as the scaffold styling system and Tailwind is absent.
-* The web application remains a minimal scaffold without final portfolio sections.
+- TypeScript checks complete successfully.
+- The web package uses the shared strict TypeScript configuration.
+- The web package keeps the `@/*` import alias.
+- The web development script uses Turbopack.
+- Sass is present as the scaffold styling system and Tailwind is absent.
+- The web application remains a minimal scaffold without final portfolio sections.
 
 ## Checkpoint 3 - Installation, Build Verification And Documentation
 
@@ -59,7 +59,7 @@ pnpm build
 
 ### Expected result
 
-* `pnpm dev` starts the web application through the root script.
-* `pnpm typecheck` completes successfully.
-* `pnpm build` completes successfully for the web application.
-* Setup documentation covers the commands needed for local development.
+- `pnpm dev` starts the web application through the root script.
+- `pnpm typecheck` completes successfully.
+- `pnpm build` completes successfully for the web application.
+- Setup documentation covers the commands needed for local development.

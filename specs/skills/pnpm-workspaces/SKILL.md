@@ -1,11 +1,12 @@
 ---
-
 name: pnpm-workspaces
 description: Design, configure, or modify a pnpm workspace or monorepo. Use for pnpm-workspace.yaml, workspace package boundaries, internal dependencies, workspace protocol, catalogs, filtered commands, shared lockfiles, and dependency cycles. Use the pnpm skill for ordinary package installation and script execution.
 compatibility: Requires a pnpm workspace. Follow the repository-pinned pnpm version.
 metadata:
   version: "1.0"
---------------
+---
+
+---
 
 # pnpm workspaces workflow
 
@@ -19,22 +20,22 @@ metadata:
 
 ## Rules
 
-* Define workspace package locations explicitly in the root `pnpm-workspace.yaml`.
-* Give every workspace package a unique, stable `name`. Mark packages as `private` unless they are intentionally published.
-* Declare each dependency in the package that imports it. Do not rely on dependencies installed only at the workspace root.
-* Use the `workspace:` protocol for internal package dependencies so installation fails rather than silently resolving a registry package.
-* Add a dependency to a specific package with `pnpm --filter <package> add <dependency>`. Use `-w` only for genuine root-level tooling.
-* Run targeted commands with `pnpm --filter`; avoid executing every package when only one package or dependency subgraph is affected.
-* Use exact package names or reviewed filter expressions. Enable or use `failIfNoMatch` where a mistyped filter must fail rather than succeed silently.
-* Keep the shared workspace lockfile unless the repository has a documented reason not to.
-* Avoid cyclic workspace dependencies. Fix cycles rather than hiding warnings; enable `disallowWorkspaceCycles` when compatible with the repository.
-* Keep package responsibilities narrow. Do not create a shared package until at least two consumers need a stable shared boundary.
-* A shared UI or configuration package must not depend on an application package.
-* Export only the public API of a package. Do not make consumers import private source paths.
-* Use catalogs for external dependency versions repeated across several packages. Do not introduce catalogs for isolated dependencies or hide intentional version differences.
-* Keep product runtime dependencies in the consuming application or package; keep repository-wide development tooling at the root when appropriate.
-* Do not move, rename, split, merge, publish, or version packages without an accepted architectural change.
-* Review all affected manifests and lockfile entries after changing workspace dependencies.
+- Define workspace package locations explicitly in the root `pnpm-workspace.yaml`.
+- Give every workspace package a unique, stable `name`. Mark packages as `private` unless they are intentionally published.
+- Declare each dependency in the package that imports it. Do not rely on dependencies installed only at the workspace root.
+- Use the `workspace:` protocol for internal package dependencies so installation fails rather than silently resolving a registry package.
+- Add a dependency to a specific package with `pnpm --filter <package> add <dependency>`. Use `-w` only for genuine root-level tooling.
+- Run targeted commands with `pnpm --filter`; avoid executing every package when only one package or dependency subgraph is affected.
+- Use exact package names or reviewed filter expressions. Enable or use `failIfNoMatch` where a mistyped filter must fail rather than succeed silently.
+- Keep the shared workspace lockfile unless the repository has a documented reason not to.
+- Avoid cyclic workspace dependencies. Fix cycles rather than hiding warnings; enable `disallowWorkspaceCycles` when compatible with the repository.
+- Keep package responsibilities narrow. Do not create a shared package until at least two consumers need a stable shared boundary.
+- A shared UI or configuration package must not depend on an application package.
+- Export only the public API of a package. Do not make consumers import private source paths.
+- Use catalogs for external dependency versions repeated across several packages. Do not introduce catalogs for isolated dependencies or hide intentional version differences.
+- Keep product runtime dependencies in the consuming application or package; keep repository-wide development tooling at the root when appropriate.
+- Do not move, rename, split, merge, publish, or version packages without an accepted architectural change.
+- Review all affected manifests and lockfile entries after changing workspace dependencies.
 
 ## Validation
 

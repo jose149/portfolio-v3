@@ -18,26 +18,26 @@ The task goal is to create the initial pnpm and Turborepo workspace with a minim
 
 Include:
 
-* root `package.json`;
-* `pnpm-workspace.yaml`;
-* initial `turbo.json`;
-* Node and package-manager declarations;
-* `apps/web`;
-* minimal Next.js App Router layout and page;
-* shared TypeScript configuration;
-* root scripts needed to start, type-check and build the web application;
-* environment example only when required by the scaffold;
-* concise setup documentation.
+- root `package.json`;
+- `pnpm-workspace.yaml`;
+- initial `turbo.json`;
+- Node and package-manager declarations;
+- `apps/web`;
+- minimal Next.js App Router layout and page;
+- shared TypeScript configuration;
+- root scripts needed to start, type-check and build the web application;
+- environment example only when required by the scaffold;
+- concise setup documentation.
 
 Do not include:
 
-* Sanity Studio;
-* Storybook or shared UI components;
-* final portfolio sections;
-* analytics or consent;
-* testing infrastructure beyond anything strictly required by the scaffold;
-* complete ESLint, Prettier or Stylelint configuration;
-* deployment configuration.
+- Sanity Studio;
+- Storybook or shared UI components;
+- final portfolio sections;
+- analytics or consent;
+- testing infrastructure beyond anything strictly required by the scaffold;
+- complete ESLint, Prettier or Stylelint configuration;
+- deployment configuration.
 
 Use `checkpointed` execution mode.
 

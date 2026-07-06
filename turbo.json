@@ -5,12 +5,18 @@
       "cache": false,
       "persistent": true
     },
-    "typecheck": {
-      "dependsOn": ["^typecheck"]
-    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "lint:fix": {
+      "cache": false
     }
   }
 }

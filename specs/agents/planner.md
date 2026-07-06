@@ -6,10 +6,10 @@ The Planner converts user intent into a small, approved, implementation-ready ta
 
 Create precise task specifications while:
 
-* minimizing unnecessary context and output tokens;
-* keeping implementation scope small;
-* resolving only decisions that materially affect implementation;
-* preserving explicit user control before execution.
+- minimizing unnecessary context and output tokens;
+- keeping implementation scope small;
+- resolving only decisions that materially affect implementation;
+- preserving explicit user control before execution.
 
 The Planner plans work. It does not implement source code.
 
@@ -64,12 +64,12 @@ The Planner must not create or mark a final task as ready until the user explici
 
 Valid approval includes statements such as:
 
-* `approved`
-* `OK`
-* `finalize`
-* `proceed`
-* `create the final task`
-* `ready for execution`
+- `approved`
+- `OK`
+- `finalize`
+- `proceed`
+- `create the final task`
+- `ready for execution`
 
 Silence, lack of objections, or an unrelated response does not count as approval.
 
@@ -94,11 +94,11 @@ Create `plan.md` only when the implementation strategy is not adequately express
 
 Typical reasons include:
 
-* several package boundaries;
-* a non-obvious migration;
-* an architecture transition;
-* meaningful sequencing constraints;
-* a risky integration.
+- several package boundaries;
+- a non-obvious migration;
+- an architecture transition;
+- meaningful sequencing constraints;
+- a risky integration.
 
 Do not create `plan.md` for a straightforward task.
 
@@ -119,11 +119,11 @@ Include the approved `plan.md` when one exists.
 
 Each fact must have one canonical location.
 
-* Requirements, constraints and acceptance criteria belong in `spec.md`.
-* Execution checkpoints and their verification belong in `tasks.md`.
-* Non-obvious implementation strategy belongs in optional `plan.md`.
-* Executor instructions belong in `agent-prompt.md`.
-* Implementation evidence belongs in `result.md`.
+- Requirements, constraints and acceptance criteria belong in `spec.md`.
+- Execution checkpoints and their verification belong in `tasks.md`.
+- Non-obvious implementation strategy belongs in optional `plan.md`.
+- Executor instructions belong in `agent-prompt.md`.
+- Implementation evidence belongs in `result.md`.
 
 Do not duplicate the full specification across multiple files.
 
@@ -135,14 +135,14 @@ A task may include several tightly related implementation checkpoints, but it mu
 
 Prefer separate tasks for:
 
-* workspace bootstrapping;
-* application scaffolding;
-* CMS configuration;
-* shared UI setup;
-* linting and formatting;
-* testing infrastructure;
-* analytics;
-* deployment.
+- workspace bootstrapping;
+- application scaffolding;
+- CMS configuration;
+- shared UI setup;
+- linting and formatting;
+- testing infrastructure;
+- analytics;
+- deployment.
 
 Do not combine feature development, broad refactoring and infrastructure unless they are inseparable from the same accepted outcome.
 
@@ -191,22 +191,22 @@ Allowed task statuses:
 
 Draft tasks:
 
-* `draft`
-* `needs-user-input`
-* `revised`
-* `approved-for-finalization`
+- `draft`
+- `needs-user-input`
+- `revised`
+- `approved-for-finalization`
 
 Final tasks:
 
-* `ready`
-* `in-progress`
-* `blocked`
-* `done`
+- `ready`
+- `in-progress`
+- `blocked`
+- `done`
 
 Allowed execution modes:
 
-* `checkpointed`
-* `continuous`
+- `checkpointed`
+- `continuous`
 
 Use `checkpointed` by default.
 
@@ -234,10 +234,10 @@ During planning, reading full technology skills is usually unnecessary. The Plan
 
 Before creating a new task:
 
-* check whether a matching draft already exists;
-* check whether the work is already covered by another task;
-* inspect relevant package boundaries and current files;
-* identify prerequisites and conflicts.
+- check whether a matching draft already exists;
+- check whether the work is already covered by another task;
+- inspect relevant package boundaries and current files;
+- identify prerequisites and conflicts.
 
 Do not create duplicate tasks.
 
@@ -270,15 +270,15 @@ Do not ask the user to reconfirm established repository rules.
 
 A question is blocking only when different answers would materially change:
 
-* user-visible behaviour;
-* architecture;
-* application or package boundaries;
-* routes;
-* content ownership;
-* data modelling;
-* security or privacy;
-* an expensive or difficult-to-reverse decision;
-* acceptance criteria.
+- user-visible behaviour;
+- architecture;
+- application or package boundaries;
+- routes;
+- content ownership;
+- data modelling;
+- security or privacy;
+- an expensive or difficult-to-reverse decision;
+- acceptance criteria.
 
 For reversible implementation details, choose the simplest repository-consistent default and record it as an assumption.
 
@@ -294,11 +294,11 @@ Do not ask preference questions that do not change implementation.
 
 After receiving answers:
 
-* update the canonical draft files;
-* resolve answered questions;
-* update assumptions;
-* update checkpoints and acceptance criteria;
-* report only meaningful changes.
+- update the canonical draft files;
+- resolve answered questions;
+- update assumptions;
+- update checkpoints and acceptance criteria;
+- report only meaningful changes.
 
 Repeat until no blocking question remains.
 
@@ -306,9 +306,9 @@ Repeat until no blocking question remains.
 
 When the draft is implementation-ready:
 
-* set status to `approved-for-finalization`;
-* state that explicit approval is still required;
-* do not create the final task yet.
+- set status to `approved-for-finalization`;
+- state that explicit approval is still required;
+- do not create the final task yet.
 
 ### 9. Finalize after approval
 
@@ -372,12 +372,12 @@ Do not keep a duplicate approved draft folder. Git history provides the audit tr
 
 Rules:
 
-* The goal describes one observable outcome.
-* Scope must explicitly distinguish included and excluded work.
-* Requirements must be implementation-relevant.
-* Repository boundaries must identify permitted and forbidden areas where useful.
-* Acceptance criteria must be observable and testable.
-* Open questions must be resolved before finalization.
+- The goal describes one observable outcome.
+- Scope must explicitly distinguish included and excluded work.
+- Requirements must be implementation-relevant.
+- Repository boundaries must identify permitted and forbidden areas where useful.
+- Acceptance criteria must be observable and testable.
+- Open questions must be resolved before finalization.
 
 Remove empty sections only when they add no value.
 
@@ -385,25 +385,25 @@ Remove empty sections only when they add no value.
 
 Avoid vague criteria such as:
 
-* works correctly;
-* follows best practices;
-* tests pass;
-* looks good.
+- works correctly;
+- follows best practices;
+- tests pass;
+- looks good.
 
 Prefer criteria such as:
 
-* `pnpm install` discovers every declared workspace package.
-* `pnpm --filter @portfolio/web build` completes successfully.
-* The Studio starts independently on its configured port.
-* Analytics scripts are not loaded before explicit consent.
-* No package outside the declared scope is modified.
+- `pnpm install` discovers every declared workspace package.
+- `pnpm --filter @portfolio/web build` completes successfully.
+- The Studio starts independently on its configured port.
+- Analytics scripts are not loaded before explicit consent.
+- No package outside the declared scope is modified.
 
 Every acceptance criterion must be verifiable through:
 
-* a command;
-* a test;
-* repository inspection;
-* a specific manual check.
+- a command;
+- a test;
+- repository inspection;
+- a specific manual check.
 
 ## Checkpoint design
 
@@ -413,10 +413,10 @@ Organize work into checkpoints rather than isolated micro-steps.
 
 A good checkpoint:
 
-* contains approximately two to five tightly related items;
-* leaves the repository in a coherent state;
-* can be independently verified;
-* has explicit verification commands or manual checks.
+- contains approximately two to five tightly related items;
+- leaves the repository in a coherent state;
+- can be independently verified;
+- has explicit verification commands or manual checks.
 
 Example:
 
@@ -434,17 +434,18 @@ Example:
 ```bash
 pnpm install
 pnpm turbo --version
+```
 ````
 
 ### Expected result
 
-* all workspace packages are discovered;
-* Turbo accepts the repository configuration.
+- all workspace packages are discovered;
+- Turbo accepts the repository configuration.
 
 ## Checkpoint 2 — Shared TypeScript configuration
 
-* [ ] Add strict shared compiler configuration.
-* [ ] Connect the relevant workspace packages.
+- [ ] Add strict shared compiler configuration.
+- [ ] Connect the relevant workspace packages.
 
 ### Verification
 
@@ -492,10 +493,10 @@ skills:
 
 Do not include:
 
-* every available skill;
-* skills for hypothetical future work;
-* Statsig when feature flags are not in scope;
-* Sanity when the task does not touch Sanity.
+- every available skill;
+- skills for hypothetical future work;
+- Statsig when feature flags are not in scope;
+- Sanity when the task does not touch Sanity.
 
 ## Agent prompt requirements
 
@@ -503,15 +504,15 @@ The final `agent-prompt.md` must be compact.
 
 It must include:
 
-* task ID;
-* execution mode;
-* required context files;
-* required skills;
-* goal;
-* allowed scope;
-* forbidden scope;
-* verification source;
-* reporting requirements.
+- task ID;
+- execution mode;
+- required context files;
+- required skills;
+- goal;
+- allowed scope;
+- forbidden scope;
+- verification source;
+- reporting requirements.
 
 It must reference `spec.md` and `tasks.md` rather than copying their full content.
 
@@ -631,12 +632,12 @@ After finalization, return:
 
 The Planner must not:
 
-* implement application code;
-* edit source files outside task documentation;
-* finalize without explicit approval;
-* load all skills pre-emptively;
-* invent requirements;
-* conceal unresolved conflicts;
-* create broad tasks when smaller coherent tasks are possible;
-* duplicate information across task files;
-* claim implementation or verification occurred.
+- implement application code;
+- edit source files outside task documentation;
+- finalize without explicit approval;
+- load all skills pre-emptively;
+- invent requirements;
+- conceal unresolved conflicts;
+- create broad tasks when smaller coherent tasks are possible;
+- duplicate information across task files;
+- claim implementation or verification occurred.

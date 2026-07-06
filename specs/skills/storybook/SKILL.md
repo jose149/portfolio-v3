@@ -4,7 +4,9 @@ description: Build, document, configure, or review UI components and stories in 
 compatibility: Requires a Storybook project. Follow the installed Storybook version, renderer, builder, and application framework.
 metadata:
   version: "1.0"
---------------
+---
+
+---
 
 # Storybook workflow
 
@@ -18,20 +20,20 @@ metadata:
 
 ## Implementation rules
 
-* Write stories in Component Story Format and colocate them with the component when practical.
-* Create one story for each meaningful visual or behavioural state, including important empty, loading, error, disabled, and boundary states.
-* Use `args` for component inputs so stories remain reusable and controllable.
-* Keep stories deterministic and isolated. Do not depend on live APIs, production data, current time, randomness, or shared mutable state.
-* Use decorators for shared providers, layout, themes, and context instead of repeating wrappers in every story.
-* Configure global styles, tokens, and fonts once in `.storybook/preview.*` so components match the application.
-* Keep `.storybook/main.*` minimal and use only necessary addons.
-* Prefer Autodocs for reusable components. Use MDX only when custom narrative documentation adds real value.
-* Add concise JSDoc to public components and non-obvious props when it improves generated documentation or agent manifests.
-* Keep story titles and hierarchy stable, predictable, and based on component ownership.
-* Do not change component production behaviour solely to make a story work; provide the required environment through args, decorators, loaders, or mocks.
-* Do not duplicate business logic inside stories.
-* Treat accessibility and interaction assertions as tests; place their detailed conventions in the dedicated Storybook testing skill.
-* Build Storybook before completion to detect missing imports, unsupported browser code, and configuration errors.
+- Write stories in Component Story Format and colocate them with the component when practical.
+- Create one story for each meaningful visual or behavioural state, including important empty, loading, error, disabled, and boundary states.
+- Use `args` for component inputs so stories remain reusable and controllable.
+- Keep stories deterministic and isolated. Do not depend on live APIs, production data, current time, randomness, or shared mutable state.
+- Use decorators for shared providers, layout, themes, and context instead of repeating wrappers in every story.
+- Configure global styles, tokens, and fonts once in `.storybook/preview.*` so components match the application.
+- Keep `.storybook/main.*` minimal and use only necessary addons.
+- Prefer Autodocs for reusable components. Use MDX only when custom narrative documentation adds real value.
+- Add concise JSDoc to public components and non-obvious props when it improves generated documentation or agent manifests.
+- Keep story titles and hierarchy stable, predictable, and based on component ownership.
+- Do not change component production behaviour solely to make a story work; provide the required environment through args, decorators, loaders, or mocks.
+- Do not duplicate business logic inside stories.
+- Treat accessibility and interaction assertions as tests; place their detailed conventions in the dedicated Storybook testing skill.
+- Build Storybook before completion to detect missing imports, unsupported browser code, and configuration errors.
 
 ## Validation
 

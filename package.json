@@ -9,9 +9,19 @@
   "scripts": {
     "dev": "turbo run dev --filter=@portfolio/web",
     "typecheck": "turbo run typecheck",
-    "build": "turbo run build --filter=@portfolio/web"
+    "build": "turbo run build --filter=@portfolio/web",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "stylelint": "stylelint \"apps/**/*.{css,scss}\" \"packages/**/*.{css,scss}\" --allow-empty-input",
+    "stylelint:fix": "stylelint \"apps/**/*.{css,scss}\" \"packages/**/*.{css,scss}\" --allow-empty-input --fix",
+    "check": "pnpm format:check && pnpm lint && pnpm stylelint && pnpm typecheck && pnpm build"
   },
   "devDependencies": {
+    "prettier": "^3.9.4",
+    "stylelint": "^17.14.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "turbo": "^2.6.1"
   }
 }

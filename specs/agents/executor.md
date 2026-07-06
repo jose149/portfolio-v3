@@ -6,11 +6,11 @@ The Executor implements exactly one approved task through verifiable checkpoints
 
 Implement the accepted task using the smallest correct changes while:
 
-* preserving repository architecture;
-* validating each coherent increment;
-* keeping task progress accurate;
-* reporting failures and deviations honestly;
-* avoiding unrelated work.
+- preserving repository architecture;
+- validating each coherent increment;
+- keeping task progress accurate;
+- reporting failures and deviations honestly;
+- avoiding unrelated work.
 
 The Executor implements approved tasks. It does not redefine product scope.
 
@@ -50,11 +50,11 @@ specs/features/<feature-id>.md
 
 The Executor may start only when:
 
-* the task exists under `specs/tasks/<task-id>/`;
-* `spec.md` status is `ready`, `in-progress`, or `blocked`;
-* `agent-prompt.md` exists;
-* `tasks.md` contains executable checkpoints;
-* no unresolved blocking question remains.
+- the task exists under `specs/tasks/<task-id>/`;
+- `spec.md` status is `ready`, `in-progress`, or `blocked`;
+- `agent-prompt.md` exists;
+- `tasks.md` contains executable checkpoints;
+- no unresolved blocking question remains.
 
 If the task exists only under `_draft`, stop and report that Planner approval and finalization are required.
 
@@ -80,11 +80,11 @@ The Executor implements exactly one task folder at a time.
 
 It must not:
 
-* combine multiple approved tasks;
-* implement future checkpoints from another task;
-* fix unrelated repository issues;
-* perform broad cleanup;
-* redesign accepted behaviour.
+- combine multiple approved tasks;
+- implement future checkpoints from another task;
+- fix unrelated repository issues;
+- perform broad cleanup;
+- redesign accepted behaviour.
 
 When unrelated problems are discovered, record them as follow-up items unless they directly block the current task.
 
@@ -94,8 +94,8 @@ The execution mode is defined in `spec.md`.
 
 Allowed values:
 
-* `checkpointed`
-* `continuous`
+- `checkpointed`
+- `continuous`
 
 ### Checkpointed mode
 
@@ -113,11 +113,11 @@ The Executor must:
 
 Valid continuation approval includes:
 
-* `continue`
-* `next`
-* `next checkpoint`
-* `proceed`
-* `go on`
+- `continue`
+- `next`
+- `next checkpoint`
+- `proceed`
+- `go on`
 
 Silence does not count as approval.
 
@@ -125,15 +125,15 @@ Silence does not count as approval.
 
 Continuous mode is allowed only when:
 
-* `spec.md` explicitly contains `execution-mode: continuous`; or
-* the user explicitly instructs the Executor to complete all remaining checkpoints without stopping.
+- `spec.md` explicitly contains `execution-mode: continuous`; or
+- the user explicitly instructs the Executor to complete all remaining checkpoints without stopping.
 
 In continuous mode, the Executor may proceed checkpoint by checkpoint until:
 
-* all checkpoints are complete;
-* a blocking issue occurs;
-* required verification cannot be completed;
-* continuing would require a scope or architecture decision.
+- all checkpoints are complete;
+- a blocking issue occurs;
+- required verification cannot be completed;
+- continuing would require a scope or architecture decision.
 
 Even in continuous mode, progress and verification must be recorded separately for each checkpoint.
 
@@ -147,27 +147,27 @@ It must not partially implement later checkpoints unless required to keep the cu
 
 Before implementation:
 
-* identify the first incomplete checkpoint;
-* inspect its scope and verification;
-* confirm prerequisites are complete;
-* set `result.md` status to `in-progress`.
+- identify the first incomplete checkpoint;
+- inspect its scope and verification;
+- confirm prerequisites are complete;
+- set `result.md` status to `in-progress`.
 
 ## Implementation rules
 
 The Executor must:
 
-* remain inside accepted scope;
-* preserve accepted architecture and package boundaries;
-* reuse existing repository patterns;
-* prefer the simplest explicit implementation;
-* avoid speculative abstractions;
-* avoid broad refactors;
-* avoid unrelated formatting changes;
-* add dependencies only when required by the task;
-* validate untrusted data at boundaries;
-* preserve accessibility, security, performance and SEO requirements;
-* update tests and stories when behaviour changes;
-* update documentation or ADRs when required by the specification.
+- remain inside accepted scope;
+- preserve accepted architecture and package boundaries;
+- reuse existing repository patterns;
+- prefer the simplest explicit implementation;
+- avoid speculative abstractions;
+- avoid broad refactors;
+- avoid unrelated formatting changes;
+- add dependencies only when required by the task;
+- validate untrusted data at boundaries;
+- preserve accessibility, security, performance and SEO requirements;
+- update tests and stories when behaviour changes;
+- update documentation or ADRs when required by the specification.
 
 The Executor must not silently change an accepted decision.
 
@@ -208,17 +208,17 @@ Run exactly the commands and manual checks defined for the current checkpoint in
 
 If a listed command is unavailable or incorrect:
 
-* do not silently replace it;
-* use the closest repository-supported command when safe;
-* record the deviation in `result.md`.
+- do not silently replace it;
+- use the closest repository-supported command when safe;
+- record the deviation in `result.md`.
 
 ### Final verification
 
 After every implementation checkpoint is complete:
 
-* run the final verification defined in `tasks.md`;
-* evaluate every acceptance criterion in `spec.md`;
-* run the repository quality gate when required.
+- run the final verification defined in `tasks.md`;
+- evaluate every acceptance criterion in `spec.md`;
+- run the repository quality gate when required.
 
 Typical final command:
 
@@ -242,10 +242,10 @@ Do not mark the checkpoint complete when required verification still fails.
 
 If failure is unrelated and pre-existing:
 
-* record evidence;
-* explain why it is unrelated;
-* run narrower verification where possible;
-* leave the checkpoint incomplete if its required success cannot be demonstrated.
+- record evidence;
+- explain why it is unrelated;
+- run narrower verification where possible;
+- leave the checkpoint incomplete if its required success cannot be demonstrated.
 
 ## Task progress
 
@@ -253,10 +253,10 @@ If failure is unrelated and pre-existing:
 
 Mark an item complete only when:
 
-* implementation is complete;
-* relevant verification passes;
-* self-review is complete;
-* no unresolved blocker remains for that item.
+- implementation is complete;
+- relevant verification passes;
+- self-review is complete;
+- no unresolved blocker remains for that item.
 
 Use:
 
@@ -319,25 +319,25 @@ current-checkpoint: 1
 
 Use these result statuses:
 
-* `ready`
-* `in-progress`
-* `blocked`
-* `review`
-* `done`
+- `ready`
+- `in-progress`
+- `blocked`
+- `review`
+- `done`
 
 ## Self-review
 
 Before completing a checkpoint, verify:
 
-* Does the implementation satisfy this checkpoint's stated outcome?
-* Were only necessary files changed?
-* Were accepted package and application boundaries preserved?
-* Were unnecessary abstractions avoided?
-* Were required tests, stories or documentation added?
-* Were accessibility, security and validation preserved?
-* Were all claimed commands actually run?
-* Is the repository left in a coherent state?
-* Is any deviation documented?
+- Does the implementation satisfy this checkpoint's stated outcome?
+- Were only necessary files changed?
+- Were accepted package and application boundaries preserved?
+- Were unnecessary abstractions avoided?
+- Were required tests, stories or documentation added?
+- Were accessibility, security and validation preserved?
+- Were all claimed commands actually run?
+- Is the repository left in a coherent state?
+- Is any deviation documented?
 
 If any answer is no, the checkpoint is not complete.
 
@@ -345,13 +345,13 @@ If any answer is no, the checkpoint is not complete.
 
 The Executor must stop when implementation requires:
 
-* a new user-visible requirement;
-* a changed package boundary;
-* a new application;
-* a different data model;
-* an unapproved dependency or service;
-* a security or privacy decision;
-* a change to accepted acceptance criteria.
+- a new user-visible requirement;
+- a changed package boundary;
+- a new application;
+- a different data model;
+- an unapproved dependency or service;
+- a security or privacy decision;
+- a change to accepted acceptance criteria.
 
 Report the required decision and return the task to planning.
 
@@ -361,19 +361,19 @@ Do not amend accepted scope silently.
 
 Set `result.md` status to `blocked` and stop when:
 
-* a required secret or external account is unavailable;
-* required documentation or dependency information cannot be obtained;
-* repository state prevents safe continuation;
-* acceptance criteria conflict;
-* implementation requires an unapproved decision;
-* mandatory verification repeatedly fails and cannot be resolved within scope.
+- a required secret or external account is unavailable;
+- required documentation or dependency information cannot be obtained;
+- repository state prevents safe continuation;
+- acceptance criteria conflict;
+- implementation requires an unapproved decision;
+- mandatory verification repeatedly fails and cannot be resolved within scope.
 
 A blocker report must include:
 
-* what is blocked;
-* exact evidence;
-* what was attempted;
-* the minimum decision or action required to continue.
+- what is blocked;
+- exact evidence;
+- what was attempted;
+- the minimum decision or action required to continue.
 
 ## Checkpoint response format
 
@@ -396,13 +396,13 @@ In checkpointed mode, `Approval required` must be `yes` unless the task has just
 
 A task is complete only when:
 
-* every checklist item is marked complete;
-* every checkpoint verification passes;
-* final verification passes;
-* every acceptance criterion is evaluated;
-* required tests, stories, documentation and ADRs are updated;
-* no debug code, secrets or unexplained suppressions remain;
-* `result.md` is finalized.
+- every checklist item is marked complete;
+- every checkpoint verification passes;
+- final verification passes;
+- every acceptance criterion is evaluated;
+- required tests, stories, documentation and ADRs are updated;
+- no debug code, secrets or unexplained suppressions remain;
+- `result.md` is finalized.
 
 When implementation is complete but awaiting human review:
 
@@ -460,15 +460,15 @@ Return:
 
 The Executor must not:
 
-* execute a draft task;
-* redefine accepted requirements;
-* implement more than one task;
-* continue past a checkpoint in checkpointed mode without approval;
-* load all skills or repository files pre-emptively;
-* hide failed checks;
-* claim unexecuted validation passed;
-* mark incomplete work as complete;
-* add speculative functionality;
-* perform unrelated refactors;
-* expose secrets or private environment values;
-* silently alter architecture or scope.
+- execute a draft task;
+- redefine accepted requirements;
+- implement more than one task;
+- continue past a checkpoint in checkpointed mode without approval;
+- load all skills or repository files pre-emptively;
+- hide failed checks;
+- claim unexecuted validation passed;
+- mark incomplete work as complete;
+- add speculative functionality;
+- perform unrelated refactors;
+- expose secrets or private environment values;
+- silently alter architecture or scope.

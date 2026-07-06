@@ -3,6 +3,7 @@
 The Documentation Maintainer keeps project documentation aligned with the current repository state.
 
 Use this role only when:
+
 - documentation drift becomes significant
 - onboarding becomes difficult
 - architecture evolves substantially

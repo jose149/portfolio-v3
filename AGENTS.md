@@ -61,14 +61,14 @@ Stack-specific conventions, examples, commands, patterns, and common mistakes be
 
 Expected skills include:
 
-* `sdd-workflow`
-* `docs-research`
-* `nextjs-react`
-* `typescript`
-* `sass`
-* `sanity`
-* `storybook-testing`
-* `code-quality`
+- `sdd-workflow`
+- `docs-research`
+- `nextjs-react`
+- `typescript`
+- `sass`
+- `sanity`
+- `storybook-testing`
+- `code-quality`
 
 ## Development workflow
 
@@ -84,28 +84,28 @@ Minor fixes may use a lightweight specification containing the intended change, 
 
 ## Engineering principles
 
-* Prefer simple, explicit solutions over clever or highly abstract ones.
-* Apply YAGNI: do not build for hypothetical requirements.
-* Do not introduce a design pattern without a concrete problem it solves.
-* Prefer composition over inheritance.
-* Keep modules focused on one responsibility and dependencies visible.
-* Separate pure domain logic from I/O and framework integration where practical.
-* Isolate external systems behind small adapters or mapping boundaries.
-* Validate untrusted data at system boundaries.
-* Reuse existing abstractions before creating new ones, but do not force unrelated use cases into one abstraction.
-* Avoid premature shared utilities, generic repositories, factories, and service layers.
-* Preserve accessibility, security, performance, and SEO requirements in user-facing changes.
-* Handle expected errors explicitly; do not silently swallow failures.
+- Prefer simple, explicit solutions over clever or highly abstract ones.
+- Apply YAGNI: do not build for hypothetical requirements.
+- Do not introduce a design pattern without a concrete problem it solves.
+- Prefer composition over inheritance.
+- Keep modules focused on one responsibility and dependencies visible.
+- Separate pure domain logic from I/O and framework integration where practical.
+- Isolate external systems behind small adapters or mapping boundaries.
+- Validate untrusted data at system boundaries.
+- Reuse existing abstractions before creating new ones, but do not force unrelated use cases into one abstraction.
+- Avoid premature shared utilities, generic repositories, factories, and service layers.
+- Preserve accessibility, security, performance, and SEO requirements in user-facing changes.
+- Handle expected errors explicitly; do not silently swallow failures.
 
 ## Code and dependency rules
 
-* Keep TypeScript strict and avoid `any`, unsafe assertions, and ignored errors without justification.
-* Let Prettier own formatting and ESLint own code-quality rules.
-* Do not edit generated files manually.
-* Do not expose secrets, tokens, or private environment values.
-* Do not add or upgrade dependencies unless required by the accepted change.
-* Record architecture-significant dependency or structural decisions in an ADR.
-* Avoid unrelated refactors and repository-wide formatting changes.
+- Keep TypeScript strict and avoid `any`, unsafe assertions, and ignored errors without justification.
+- Let Prettier own formatting and ESLint own code-quality rules.
+- Do not edit generated files manually.
+- Do not expose secrets, tokens, or private environment values.
+- Do not add or upgrade dependencies unless required by the accepted change.
+- Record architecture-significant dependency or structural decisions in an ADR.
+- Avoid unrelated refactors and repository-wide formatting changes.
 
 ## Validation
 
@@ -123,9 +123,9 @@ pnpm check
 
 Testing effort must be proportional to risk:
 
-* Unit-test non-trivial pure logic and data transformations.
-* Use Storybook and component tests for reusable UI states and interactions.
-* Use Playwright for critical user journeys rather than exhaustive implementation details.
+- Unit-test non-trivial pure logic and data transformations.
+- Use Storybook and component tests for reusable UI states and interactions.
+- Use Playwright for critical user journeys rather than exhaustive implementation details.
 
 Never claim that a command, test, accessibility check, or build passed unless it was actually run.
 
@@ -133,12 +133,12 @@ Never claim that a command, test, accessibility check, or build passed unless it
 
 A change is complete when:
 
-* its acceptance criteria are satisfied;
-* relevant validation passes;
-* accessibility and responsive behaviour were considered;
-* documentation and stories are updated when applicable;
-* no debug code, secrets, or unexplained suppressions remain;
-* assumptions and known limitations are reported.
+- its acceptance criteria are satisfied;
+- relevant validation passes;
+- accessibility and responsive behaviour were considered;
+- documentation and stories are updated when applicable;
+- no debug code, secrets, or unexplained suppressions remain;
+- assumptions and known limitations are reported.
 
 ## Response format
 
