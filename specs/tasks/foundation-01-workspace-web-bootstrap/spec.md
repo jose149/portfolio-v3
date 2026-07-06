@@ -1,0 +1,124 @@
+---
+id: foundation-01-workspace-web-bootstrap
+status: ready
+feature: 000-foundation
+execution-mode: checkpointed
+skills:
+  - pnpm
+  - pnpm-workspaces
+  - turborepo
+  - nextjs
+  - react
+  - sass
+  - typescript
+---
+
+# Goal
+
+Create the initial pnpm and Turborepo workspace with a minimal buildable Next.js App Router web application scaffolded from `create-next-app`, Sass styling, and reusable strict TypeScript configuration.
+
+# Context
+
+This task is the first implementation increment for the accepted foundation specification at `specs/features/000-foundation/000-foundation.md`. It establishes only the workspace, package boundaries, minimal web scaffold, shared TypeScript configuration, and setup documentation needed for later foundation tasks.
+
+# Scope
+
+## Included
+
+* Root `package.json`.
+* `pnpm-workspace.yaml`.
+* Initial `turbo.json`.
+* Node and package-manager declarations.
+* `apps/web` workspace package.
+* Minimal Next.js App Router layout and page.
+* `apps/web` scaffold based on `create-next-app` selections for TypeScript, ESLint, App Router, Turbopack, pnpm, import alias `@/*`, no Tailwind, and Sass styling.
+* Shared strict TypeScript configuration package.
+* Root scripts needed to start, type-check, and build the web application.
+* Environment example only if the scaffold requires environment variables.
+* Concise setup documentation.
+
+## Not included
+
+* Sanity Studio.
+* Storybook or shared UI components.
+* Final portfolio sections or production page composition.
+* Analytics, consent, or tracking.
+* Testing infrastructure beyond anything strictly required by the scaffold.
+* Complete repository-wide ESLint, Prettier, or Stylelint configuration.
+* Deployment configuration.
+* CI configuration.
+
+# Requirements
+
+## Functional
+
+* The repository must be installable as a pnpm workspace.
+* The web application must expose a minimal App Router layout and page that can build successfully.
+* The web application must use Sass as its initial styling system and must not include Tailwind.
+* Root scripts must support starting the web application in development, type-checking the workspace, and building the web application.
+* Setup documentation must describe the local install, dev, type-check, and build workflow.
+
+## Technical
+
+* Use pnpm workspaces for package discovery.
+* Use Turborepo for task orchestration.
+* Scaffold `apps/web` with `create-next-app` or an equivalent command path using TypeScript, ESLint, App Router, Turbopack, pnpm, import alias `@/*`, and no Tailwind.
+* Declare supported Node and package manager versions in repository-controlled configuration.
+* Add a reusable strict TypeScript configuration package under `packages/typescript-config`.
+* Configure `apps/web` to consume the shared TypeScript configuration.
+* Configure `apps/web` to use Sass for scaffold-level styles.
+* Configure the web development script to use Turbopack.
+* Preserve the import alias `@/*` in the web TypeScript configuration.
+* Keep TypeScript strict and avoid `any`, unsafe assertions, or ignored errors.
+* Add only dependencies required for the scaffold.
+* Prefer installed package versions and lockfile output as the source of truth once dependencies are installed.
+* Keep ESLint limited to the scaffold-generated Next.js application setup; do not add broad repository-wide linting, formatting, stylelint, testing, Storybook, Sanity, analytics, deployment, or CI configuration in this task.
+
+# Repository boundaries
+
+Permitted areas:
+
+* root workspace manifests and setup documentation;
+* `apps/web`;
+* `packages/typescript-config`;
+* generated dependency lockfile from installation.
+
+Forbidden areas:
+
+* `apps/studio`;
+* `packages/ui`;
+* `packages/sanity`;
+* analytics, consent, deployment, CI, and testing setup;
+* unrelated existing specs, docs, public assets, and design files.
+
+# Acceptance criteria
+
+* Repository inspection shows root `package.json`, `pnpm-workspace.yaml`, and `turbo.json` exist and declare the initial workspace boundaries.
+* Repository inspection shows Node and package-manager declarations exist in repository-controlled configuration.
+* `pnpm install` discovers all declared workspace packages and creates or updates the lockfile.
+* Repository inspection shows `apps/web` contains a minimal Next.js App Router layout and page.
+* Repository inspection shows `apps/web` uses TypeScript, ESLint, App Router, Turbopack for development, pnpm, import alias `@/*`, Sass styling, and no Tailwind configuration or dependency.
+* Repository inspection shows `packages/typescript-config` provides a reusable strict TypeScript configuration consumed by `apps/web`.
+* `pnpm dev` starts the web application through the root script.
+* `pnpm typecheck` completes successfully.
+* `pnpm build` completes successfully for the web application.
+* Setup documentation describes install, dev, type-check, and build commands.
+* No files outside the permitted areas are modified, except dependency metadata generated by pnpm.
+
+# Decisions and assumptions
+
+* Use the foundation target structure names `apps/web` and `packages/typescript-config`.
+* Use `create-next-app` defaults where they are compatible with the requested selections and repository constraints.
+* Use `checkpointed` execution mode with three checkpoints.
+* Do not create an environment example unless the scaffold introduces required environment variables.
+* Exact dependency versions are chosen during execution from current package manager resolution and recorded in the lockfile.
+
+# Dependencies
+
+* Accepted foundation specification: `specs/features/000-foundation/000-foundation.md`.
+* Executor must load only the skills listed in frontmatter unless implementation reveals another skill is necessary.
+* Network access may be required during execution for `pnpm install` if dependencies are not already available locally.
+
+# Open questions
+
+None.

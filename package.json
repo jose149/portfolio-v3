@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-v3",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.30.0",
+  "engines": {
+    "node": ">=24.13.1"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@portfolio/web",
+    "typecheck": "turbo run typecheck",
+    "build": "turbo run build --filter=@portfolio/web"
+  },
+  "devDependencies": {
+    "turbo": "^2.6.1"
+  }
+}
