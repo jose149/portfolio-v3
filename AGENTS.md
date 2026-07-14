@@ -7,7 +7,7 @@ Keep product requirements in `specs/`, architecture decisions in `docs/decisions
 
 ## Project
 
-Build a high-quality portfolio platform with a Next.js and React frontend, TypeScript, Sass, Sanity, Storybook, ESLint, Prettier, pnpm workspaces, and Turborepo.
+Build a high-quality portfolio platform with a Next.js and React frontend, TypeScript, Sass, Storybook, ESLint, Prettier, pnpm workspaces, and Turborepo.
 Exact versions, dependencies, and executable commands are defined by the repository files and lockfile.
 
 ## Agent skills
@@ -66,7 +66,6 @@ Expected skills include:
 - `nextjs-react`
 - `typescript`
 - `sass`
-- `sanity`
 - `storybook-testing`
 - `code-quality`
 
